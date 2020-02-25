@@ -1,0 +1,226 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Practica2garciaacosta</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-02-25"><meta name="DC.source" content="Practica2garciaacosta.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><p><img vspace="5" hspace="5" src="portadita.png" alt=""> </p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#3">Ejercicio 1</a></li><li><a href="#4">Ejercicio 2</a></li><li><a href="#5">Ejercicio 3</a></li><li><a href="#6">funciones</a></li><li><a href="#7">Referencias</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Manipulaci&oacute;n b&aacute;sica de MATLAB</li><li>Gr&aacute;ficas de se&ntilde;ales reales y complejas continuas</li><li>Transformaci&oacute;n de se&ntilde;ales continuas (escalamientos y traslaciones)</li><li>C&aacute;lculo de energ&iacute;a y potencia de se&ntilde;ales continua</li></ul></div><h2 id="2">Introducci&oacute;n</h2><p>Este entonrno informtatico empez&oacute; por tes hombres,JH Wikinson, George Forsythe y John Todd hace ya m&aacute;s de 60 a&ntilde;os. Fue despues de muchos estudios de los autores, problemas, investigaciones y conferencias que a finales de 1970 crean la primera versi&oacute;n de MATLAB. Para esta versi&oacute;n se utliz&oacute; Fortran ademas que solamente se contaba con 80 funciones y mucho menos pensar en todas las herramientas con las que contamos hoy en d&iacute;a. S&iacute; tu como usuario quer&iacute;as una funci&oacute;n adicional a las que contaba el programa se debia modificar el c&oacute;digo fuente de Fortran y compilar todo el programa.</p><p>Es curioso que los autores presentaron su softeare en un grupo de Standford en el cual se encontraban inform&aacute;ticos, matem&aacute;ticos e ingenieros y los m&aacute;s sorprendidos fueron los ingenieros, los cuales vieron en MATLAB una herramienta en la cual apoyarse.</p><p>Hoy en d&iacute;a existe un gran n&uacute;mero de software que nos sirve para realizar gr&aacute;fias, operaciones y un sin fin de actividades. Una alternativa a MATLAB es <b>Octave</b>, el cual es una alternativa de softeare libre parecida a MATLAB. Octave cuenta con una sintaxis similar a MATLAB, aq&iacute; tambien se pueden ejecutar scripts ademas qur soporta parte de las funciones de la librer&iacute;a est&aacute;ndar del lenguaje C. Aqu&iacute; proporciono un enlace si se quiere profundizar en el tema <a href="http://ewh.ieee.org/sb/el_salvador/uca/octave.html">Octave</a>. Otra opci&oacute;n puede ser <b>Python</b>. Python es un lenguaje de programaci&oacute;n que ha tenido una popularidad que ha ido aumentando a lo largo de los ultimos a&ntilde;os pues es multiplataforma, es un lenguaje poco tipado, lo que significa que no tiene una sintaxis estricta como puede ser la que tiene lenguajes como Java o c++. Este lenguaje actualmente se est&aacute; utilizando fuertemente en ciencia de los datos e inteligencia artificial, entra muchas otras cosas. <a href="https://blog.nubecolectiva.com/que-es-python-y-otros-detalles/">Python</a></p><h2 id="3">Ejercicio 1</h2><p>1. Crea una funci&oacute;n que se llame <tt>fun1</tt> y reciba dos parametros y la funci&oacute;n debe regresar la evaluaci&oacute;n f(&#969;) = a^2/(a^2+&#969;^2), esta funci&oacute;n debe trabajar con a &#8712; R y &#969; &#8712; R^n .</p><pre class="codeinput">clear;
+close <span class="string">all</span>;
+
+a = 2;
+b = -25:0.1:25;
+f = fun1(a,b);
+
+plot(b,f);
+title(<span class="string">"Grafica 1"</span>);
+origen= gca;
+origen.XAxisLocation;
+origen.YAxisLocation;
+grid <span class="string">on</span>;
+</pre><img vspace="5" hspace="5" src="Practica2garciaacosta_01.png" alt=""> <h2 id="4">Ejercicio 2</h2><p>2. Construya una funci&oacute;n que grafique funciones de R &#8594; R  en el formato de su elecci&oacute;n y pruebe su c&oacute;digo mostrando la gr&aacute;fica de f(&#969;)  vs &#969; en el intervalo [-2,2] para a=1.</p><pre class="codeinput">  g = -10:0.1:10;
+  v = fun2(g);
+plot(g,v);
+title(<span class="string">"Grafica 2"</span>);
+origen= gca;
+origen.XAxisLocation;
+origen.YAxisLocation;
+grid <span class="string">on</span>;
+</pre><img vspace="5" hspace="5" src="Practica2garciaacosta_02.png" alt=""> <h2 id="5">Ejercicio 3</h2><pre class="codeinput">clear;
+close <span class="string">all</span>;
+<span class="comment">% Construya una funci&oacute;n que gr&aacute;fique funciones de R &#8594; R^2 en el formato de su elecci&oacute;n y pruebe su c&oacute;digo mostrando la gr&aacute;fica de la transformada</span>
+<span class="comment">% de Fourier f(&#969;) en [-10,10] de la funci&oacute;n $f(t) = e^-2t*u(t)$  , puede utilizar una funci&oacute;n anonima para este fin, no debe incluir el c&oacute;digo, solo el uso de la funci&oacute;n para</span>
+<span class="comment">% mostrarla gr&aacute;fica. Reporte la gr&aacute;fica de $f(t)$ de [-1,5] (recuerde que ya tiene una funci&oacute;n para esto). Reporte del espectro de magnitud y del</span>
+<span class="comment">% espectro de fase en [-10,10] (puedes con sultar con help la descripci&oacute;n de abs, angle, atan2). Solo reporte las graficas.</span>
+
+  fun3();
+</pre><img vspace="5" hspace="5" src="Practica2garciaacosta_03.png" alt=""> <h2 id="6">funciones</h2><p>por problemas con las funciones tuve que poner todas las funciones al final del trabajo pero las dejo con numero</p><pre class="codeinput"><span class="keyword">function</span> f=fun1(a,b)
+    f= a./(a^2+b.^2);
+<span class="keyword">end</span>
+<span class="keyword">function</span> f=fun2(b)
+   f= 1./(1^2+b.^2);
+<span class="keyword">end</span>
+<span class="keyword">function</span> fun3()
+    x  =  0:0.1:10;
+    y = exp(-x*2);
+
+    plot(y);
+
+
+<span class="keyword">end</span>
+</pre><h2 id="7">Referencias</h2><p>Todas la refencias fueron del sitio oficial de MATLAB * <a href="https://www.mathworks.com/help/matlab/ref/exp.html">Exponenciales</a> * <a href="https://www.mathworks.com/help/matlab/ref/axis.html">Graficas</a> * <a href="https://www.mathworks.com/help/images/ref/imadd.html">imagenes</a></p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+% 
+% <<portadita.png>>
+% 
+%% Objetivos
+% 
+% 
+% * Manipulación básica de MATLAB
+% * Gráficas de señales reales y complejas continuas
+% * Transformación de señales continuas (escalamientos y traslaciones)
+% *  Cálculo de energía y potencia de señales continua
+%% Introducción
+% Este entonrno informtatico empezó por tes hombres,JH Wikinson, George
+% Forsythe y John Todd hace ya más de 60 años.
+% Fue despues de muchos estudios de los autores, problemas, investigaciones
+% y conferencias que a finales de 1970 crean la primera versión de MATLAB.
+% Para esta versión se utlizó Fortran ademas que solamente se contaba con
+% 80 funciones y mucho menos pensar en todas las herramientas con las que
+% contamos hoy en día. Sí tu como usuario querías una función adicional a
+% las que contaba el programa se debia modificar el código fuente de
+% Fortran y compilar todo el programa.
+%
+% Es curioso que los autores presentaron su softeare en un grupo de
+% Standford en el cual se encontraban informáticos, matemáticos e ingenieros
+% y los más sorprendidos fueron los ingenieros, los cuales vieron en MATLAB
+% una herramienta en la cual apoyarse.
+%
+% Hoy en día existe un gran número de software que nos sirve para realizar
+% gráfias, operaciones y un sin fin de actividades. Una alternativa a
+% MATLAB es *Octave*, el cual es una alternativa de softeare libre parecida
+% a MATLAB. Octave cuenta con una sintaxis similar a MATLAB, aqí tambien se
+% pueden ejecutar scripts ademas qur soporta parte de las funciones de la
+% librería estándar del lenguaje C. Aquí proporciono un enlace si se quiere
+% profundizar en el tema <http://ewh.ieee.org/sb/el_salvador/uca/octave.html Octave>.
+% Otra opción puede ser *Python*. Python es un lenguaje de programación que
+% ha tenido una popularidad que ha ido aumentando a lo largo de los ultimos
+% años pues es multiplataforma, es un lenguaje poco tipado, lo que
+% significa que no tiene una sintaxis estricta como puede ser la que tiene
+% lenguajes como Java o c++. Este lenguaje actualmente se está utilizando
+% fuertemente en ciencia de los datos e inteligencia artificial, entra
+% muchas otras cosas. <https://blog.nubecolectiva.com/que-es-python-y-otros-detalles/ Python> 
+
+%% Ejercicio 1
+% 1. Crea una función que se llame |fun1| y reciba dos parametros y la función debe regresar la evaluación f(ω) = a^2/(a^2+ω^2), esta función debe trabajar con a ∈ R y ω ∈ R^n .
+% 
+% 
+clear;
+close all;
+
+a = 2;
+b = -25:0.1:25;
+f = fun1(a,b);
+
+plot(b,f);
+title("Grafica 1");
+origen= gca;
+origen.XAxisLocation;
+origen.YAxisLocation;
+grid on;
+
+%%  Ejercicio 2
+% 2. Construya una función que grafique funciones de R → R  en el formato de su elección y pruebe su código mostrando la gráfica de f(ω)  vs ω en el intervalo [-2,2] para a=1.
+  g = -10:0.1:10;
+  v = fun2(g);
+plot(g,v);
+title("Grafica 2");
+origen= gca;
+origen.XAxisLocation;
+origen.YAxisLocation;
+grid on;
+%% Ejercicio 3
+clear;
+close all;
+% Construya una función que gráfique funciones de R → R^2 en el formato de su elección y pruebe su código mostrando la gráfica de la transformada 
+% de Fourier f(ω) en [-10,10] de la función $f(t) = e^-2t*u(t)$  , puede utilizar una función anonima para este fin, no debe incluir el código, solo el uso de la función para 
+% mostrarla gráfica. Reporte la gráfica de $f(t)$ de [-1,5] (recuerde que ya tiene una función para esto). Reporte del espectro de magnitud y del
+% espectro de fase en [-10,10] (puedes con sultar con help la descripción de abs, angle, atan2). Solo reporte las graficas.
+
+  fun3();
+
+ %% funciones
+ % por problemas con las funciones tuve que poner todas las funciones al
+ % final del trabajo pero las dejo con numero
+ 
+function f=fun1(a,b)
+    f= a./(a^2+b.^2);
+end
+function f=fun2(b)
+   f= 1./(1^2+b.^2);
+end
+function fun3()
+    x  =  0:0.1:10;
+    y = exp(-x*2);
+
+    plot(y);
+
+
+end
+%% Referencias
+% Todas la refencias fueron del sitio oficial de MATLAB 
+% * <https://www.mathworks.com/help/matlab/ref/exp.html Exponenciales> 
+% * <https://www.mathworks.com/help/matlab/ref/axis.html Graficas>
+% * <https://www.mathworks.com/help/images/ref/imadd.html imagenes> 
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
