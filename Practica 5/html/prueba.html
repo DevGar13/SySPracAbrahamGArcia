@@ -67,36 +67,28 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><pre class="codeinput">clear;
-T=pi;
-w0=(2*pi)/T;
-a0=0.504;
-an=@(n) 0.504*(2/(1+16*n^2));
-bn=@(n) 0.504*((8*n)/(1+16*n^2));
-f=@(t) exp(-t/2);
-a=0;
-b=pi;
-t0=0;
+  </style></head><body><div class="content"><pre class="codeinput">d0=1/2;
+dn=@(n) sin((n*pi)/2);
+t0=-pi;
 tf=pi;
-armo=4;
-arg=@(n) -atan(4*n);
-p1(t0,tf,a0,an,bn,f,a,b,w0,armo,arg)
-</pre><img vspace="5" hspace="5" src="prueba_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
+f=@(t) (-pi&lt;t&lt;-pi/2 || pi&lt;t&lt;pi/2).*(0)+(-pi/2&lt;=t&lt;=);
+armo=15;
+a=-2*15;
+b=2*15;
+p7(t0,tf,dn,d0,f,armo,a,b)
+</pre><pre class="codeoutput error">Error using dbstatus
+Error: File: /MATLAB Drive/Practica 5/prueba.m Line: 5 Column: 51
+Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched delimiters.
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-clear;
-T=pi;
-w0=(2*pi)/T;
-a0=0.504;
-an=@(n) 0.504*(2/(1+16*n^2));
-bn=@(n) 0.504*((8*n)/(1+16*n^2));
-f=@(t) exp(-t/2);
-a=0;
-b=pi;
-t0=0;
+d0=1/2;
+dn=@(n) sin((n*pi)/2);
+t0=-pi;
 tf=pi;
-armo=4;
-arg=@(n) -atan(4*n);
-p1(t0,tf,a0,an,bn,f,a,b,w0,armo,arg)
-
+f=@(t) (-pi<t<-pi/2 || pi<t<pi/2).*(0)+(-pi/2<=t<=);
+armo=15;
+a=-2*15;
+b=2*15;
+p7(t0,tf,dn,d0,f,armo,a,b)
 ##### SOURCE END #####
 --></body></html>

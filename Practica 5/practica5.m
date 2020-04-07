@@ -84,7 +84,7 @@
 % <<4f1.png>>
 % 
 % En las graficas anterioes se ve poca precisión en la serie de fourier con respecto de la funcion origial.
-% Ahora lo veremos con 15 armónicos para ver que ocurre.
+% Ahora lo veremos con 15 armónicos para ver que ocurre. co
 % 
 % <<15f1.png>>
 % 
@@ -93,6 +93,72 @@
 %% Ejemplo 6.2
 % Encontrar la serie exponencial y el espectro. Para este ejemplo vamos a
 % suponer que A-3.
+%% Ejemplo 6.4
+% Para este problema se tiene que realizar la serie y el espectro
+% exponencial.
+% Bueno para este ejemplo se tiene un pulso que va desde $-\pi$ a $\pi$
+% pero solo de  $-\pi/2$ a $\pi/2$ tiene un valor y este valor es uno.
+% Este ejemplo a diferencia del primer ejemplo que vimos en la práctica se
+% toma una funcion a trozos, que es interesante ver como se gráfica y
+% evalua para el problema. Dejaré este código en el apéndice de la
+% práctica.
+% Antes de graficar se tiene que realizar las operaciones matematicas para
+% encontrar los coeficientes. En este caso primero encuentro la serie de
+% fourier trigonometríca y de esa fórmula hago una conversion para sacar la
+% exponencial.
+% De la conversión tenemos que $D_0 = 1/2$, con la fórmula de conversion y
+% tomando en cuenta que no tenemos un $b_n$ podemos decir que:
+% 
+% <<dn.png>>
+% 
+% Esta serie tiene coeficientes:
+% 
+% <<serie.png>>
+% 
+% Estas son las gráficas con 4 armonicos:
+% 
+% <<4f4.png>>
+% 
+% Y esta es la diferencia que se llega a apreciar cuando aumentamos de e4 a
+% 15 armónicos:
+% 
+% <<15f4.png>>
+% 
+% 
+%
+% 
+% 
+%
+%
+% 
+%
+%
+% 
+% 
+%
+%
+% 
+%
+%
+% 
+% 
+%
+%
+% 
+%
+%
+% % 
+%
+%
+% 
+%
+%
+% 
+
+
+
+
+
 %% Ejemplo 6.5 
 % En este ejemplo vamoa a encontrar la serie exponen ia serie de fourier
 % exponencial de la funciión que previamente vimos en el ejemplo 6.1.
@@ -158,6 +224,36 @@
 % pero se quitan del script las gráficas que no se necesitan.
 % 
 % <include>p7.m</include>
+% 
+% Para el ejemplo 6.4 en una función a trozos utilicé la función de ejemplo
+% de la práctica pero la modificación interesante pasa cuando se llama pues
+% declaro una función simbolica pero con operadores lógicos que se encargan
+% de evaluar que función tomar y en que momento en el instante en el que
+% son ciertos y regresan un true.
+%
+% <include>programa.m</include>
+%
+% Si es verdad la condicional regresa uno y multiplica a esa función, de no
+% ser así es false y regresa un cero que sera multiplicado por la función
+% correspondiente
+%
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
 %% Referencia
 %
 % Lathi, B. P. (1998). Signal processing and linear systems (cap. 6). New York: Oxford University Press.

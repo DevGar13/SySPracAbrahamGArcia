@@ -10,7 +10,7 @@ for n=1:armo
 end
 figure (1)
 hFig = figure(1);
-set(hFig, 'Position', [0 0 900 900])
+set(hFig, 'Position', [-100 100 900 900])
 subplot(3,2,1)
 plot(t,sf,'LineWidth',2)
 grid on
