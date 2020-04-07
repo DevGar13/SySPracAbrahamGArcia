@@ -1,0 +1,432 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>practica5</title><meta name="generator" content="MATLAB 9.8"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-04-07"><meta name="DC.source" content="practica5.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><p><img vspace="5" hspace="5" src="portada.png" alt=""> </p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#3">Desarrolo</a></li><li><a href="#5">Ejemplo 6.1</a></li><li><a href="#6">Ejemplo 6.2</a></li><li><a href="#7">Ejemplo 6.5</a></li><li><a href="#8">Ejemplo 6.7</a></li><li><a href="#9">Ejemplo C6.4</a></li><li><a href="#10">Ap&eacute;ndice</a></li><li><a href="#11">Referencia</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Realizar gr&aacute;ficas de series de Fourier exponenciales y trigonom&eacute;tricas en tiempo continuo.</li><li>Manipulaci&oacute;n de instrucciones en MATLAB.</li><li>Calculo n&uacute;merico de los coeficientes de Fourier.</li></ul></div><h2 id="2">Introducci&oacute;n</h2><p>En esta pr&aacute;ctica se va a observar el tema de Series de Fourier con el apoyo de matlab para mostrar diferentes graficos que nos proporcionen informaci&oacute;n &uacute;til de la serie. Como introducci&oacute;n vamos a observar la aproximaci&oacute;n numerica para encontrar los Dn de la serie exponencial compleja que vemos en la secci&oacute;n 6.6 del libro Lathi. Para calcular numericamente Dn se usa la transformada discreta de Fourier, este metodo utiliza muestras de la se&ntilde;al periodica x(t) eb un per&iacute;odo T.</p><p><img vspace="5" hspace="5" src="aprox.png" alt=""> </p><p>En este caso nosotros tenemos <img src="practica5_eq12048051436947753165.png" alt="$$N_0 = T_0/T$"> n&uacute;mero de muestras en un periodo <img src="practica5_eq00645987002107359863.png" alt="$$T_0$"> y <img src="practica5_eq13610234600584563735.png" alt="$\Omega_0=\omega_0T= \frac{2\pi}{N_0}$"></p><pre>Nosotros no podemos hacer que T tienda a cero, pero si podemos tomar una
+T muy peque&ntilde;a, as&iacute; que por esta cuestion vamos a obviar el limite de T
+de la ecuaci&oacute;n, siempre recordando que T es diferente de cero.</pre><p><img vspace="5" hspace="5" src="sinLimite.png" alt=""> </p><p>Por &uacute;ltimo podemos observar la propiedad de de periocidad, donde encontramos que</p><p><img vspace="5" hspace="5" src="periocidad.png" alt=""> </p><p>Esta propiedad significa que cada <img src="practica5_eq18139336400197798379.png" alt="$$n = \frac{N_0}{2}$"> el coeficiente respresenta el valor negativo de n.</p><p><img vspace="5" hspace="5" src="32.png" alt=""> </p><p>y el ciclo se repite cada <img src="practica5_eq16741219419333851607.png" alt="$$n = 32$"></p><p>Como &uacute;ltimo recordatorio retomamos de la pr&aacute;ctica pasada que podemos encontrar otros metodos para aproximar una integral, a continucaci&oacute;n se puede observar uno de los m&eacute;todos previamente vistos.</p><p><img vspace="5" hspace="5" src="practica4.png" alt=""> </p><h2 id="3">Desarrolo</h2><p>En esta secci&oacute;n se van a resolver diferentes problemas que se encuentran en el libro Lathi. Para cada problema lo que se va a hacer es:</p><div><ol><li>Realizar el programa de la serie que se indica</li><li>Gr&aacute;fica de la serie de Fourier en un intervalo que muestre 5 repeticiones</li><li>Gr&aacute;fica de la se&ntilde;al y la serie de Fourier para 4 armonicos</li><li>Gr&aacute;fica del error</li><li>Gr&aacute;fica de la energ&iacute;a del error</li><li>Espectro de magnitud para 4 armonicos</li><li>Espectro de fase para 4 armonicos</li><li>Todo lo anterior para 15 armonicos</li></ol></div><h2 id="5">Ejemplo 6.1</h2><p>Encuentra la serie trigonom&eacute;trica compacta de la siguiente funcion y su espectro</p><p><img vspace="5" hspace="5" src="6-1.png" alt=""> </p><p>La funci&oacute;n a la que le debemos sacar la serie de fourier es la siguiente</p><p><img vspace="5" hspace="5" src="f1.png" alt=""> </p><p>Despues del calculo matem&aacute;tico nosotros podemos observar que contamos con la siguiente serie.</p><p><img vspace="5" hspace="5" src="serie1.png" alt=""> </p><p>Podemos observar la exactitud que nos puede dar la serie cuando aumentamos o disminuimos los armonicos. Vamos a observar primero la serie con 4 armonicos y despues con 15 para notar la diferencia.</p><p><img vspace="5" hspace="5" src="4f1.png" alt=""> </p><p>En las graficas anterioes se ve poca precisi&oacute;n en la serie de fourier con respecto de la funcion origial. Ahora lo veremos con 15 arm&oacute;nicos para ver que ocurre.</p><p><img vspace="5" hspace="5" src="15f1.png" alt=""> </p><p>Como se puede observar, la serie de fourier con m&aacute;s arm&oacute;nicos se parece mas a nuestra funci&oacute;n original(en rojo), tiene m&aacute;s precisi&oacute;n.</p><h2 id="6">Ejemplo 6.2</h2><p>Encontrar la serie exponencial y el espectro. Para este ejemplo vamos a suponer que A-3.</p><h2 id="7">Ejemplo 6.5</h2><p>En este ejemplo vamoa a encontrar la serie exponen ia serie de fourier exponencial de la funcii&oacute;n que previamente vimos en el ejemplo 6.1. Ahora a diferencia del ejemplo 6.1 si vamos a tener valores cuando la t sea negativa.</p><p><img vspace="5" hspace="5" src="4f5.png" alt=""> </p><p>En esta grafica se observa que la serie no es tan exacta con apenas 4 armonicos, vemos que la gr&aacute;fica de error tiene una &aacute;rea que para ciertos casos podr&iacute;a ser considerable. Se aprecia una mejor aproximacion a la gr&aacute;fica origial en nuestra siguientes gr&aacute;ficas donde aumentemos los arm&oacute;nicos.</p><p><img vspace="5" hspace="5" src="15f5.png" alt=""> </p><p>Disminuye el erro con m&aacute;s arm&oacute;nicos y as&iacute; podriamos ir siendo mas exactos si ponemos un n&uacute;mero de armonicos lo suficientemente grande.</p><h2 id="8">Ejemplo 6.7</h2><p>Encontrar la serie y el espectro exponencial tomando en cuenta que para este ejemplo la A=3. Para este ejemplo no es necesario colocar la gr&aacute;fica original, el error ni la energ&iacute;a del error. Para mostrar las gr&aacute;ficas tom&eacute; el c&oacute;digo de ejemplo de la pr&aacute;ctica con ciertas modificaciones para que cumpliera con lo requerido, primero veremos como se ve la serie con cuatro arm&oacute;nicos.</p><p><img vspace="5" hspace="5" src="4f7.png" alt=""> </p><p>Vamos a ver algo que a simple vista puede lelgar a ser raro y es que la gr&aacute;fica de la fase, el espectro de fase esta siempre en cero, esto pasa porque al tener <img src="practica5_eq05239240766036238760.png" alt="$D_n=1/3$"> el numero siempre es un real positivo, eso nos indica que siempre esta sobre el eje real derecho y nos dice que siempre tendr&aacute; &aacute;ngulo 0. Como es obvio suponer, se mantendr&eacute; lo antes mencionado cuando aumentemos en n&uacute;mero de arm&oacute;nicos.</p><p><img vspace="5" hspace="5" src="15f7.png" alt=""> </p><h2 id="9">Ejemplo C6.4</h2><p>Elabore un c&oacute;digo que implemente el algoritmo de trapecio compuesto para <img src="practica5_eq08501079337458606022.png" alt="$n=15$">, Utilice este c&oacute;digo para aproximar <img src="practica5_eq12324390629844581234.png" alt="$D_0,...,D_4$"> del ejemplo de la pr&aacute;ctica. Ahora implemente el c&oacute;digo COMPUTER EXAMPLE C6.4 que se encuentra al final de la secci&oacute;n 6.6 de Lathi, y calcule nuevamente el los coeficientes <img src="practica5_eq12324390629844581234.png" alt="$D_0,...,D_4$"> del ejemplo propuesto. Muestre una tabla que contenga los coeficientes mencionados calculados con los dos algoritmos y de forma exacta,</p><h2 id="10">Ap&eacute;ndice</h2><p>Aqu&iacute; mostrare mi c&oacute;digo de matlab con el cual fui resolviendo los diferentes ejemplos de la pr&aacute;ctica. Este c&oacute;digo fue para encontrar la serie de Fourier trigonom&eacute;trica</p><pre class="language-matlab">
+<span class="keyword">function</span> p1(t0,tf,a0,an,bn,f,a,b,w0,armo,arg)
+<span class="comment">% Tomando como referencia el c&oacute;digo propuesto aqui ya paso todos los</span>
+<span class="comment">% argumentos necesarios para la serie de fourier, se aprecia tambien que le</span>
+<span class="comment">% paso la formula del &aacute;ngulo para ser gr&aacute;ficado</span>
+
+sf=a0;
+t=a:0.0001:b;
+
+<span class="keyword">for</span> n=1:armo
+    sf=sf + (an(n)*cos(n*w0*t)+bn(n)*sin(n*w0*t));
+<span class="keyword">end</span>
+figure (1)
+hFig = figure(1);
+set(hFig, <span class="string">'Position'</span>, [0 0 900 900])
+subplot(3,2,1)
+plot(t,sf,<span class="string">'LineWidth'</span>,2)
+grid <span class="string">on</span>
+legend(<span class="string">'Serie de Fourier'</span>,<span class="string">'Location'</span>,<span class="string">'Best'</span>)
+xlabel(<span class="string">'Serie trigonometrica'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+
+
+
+sf=a0;
+t1=t0:0.0001:tf;
+
+<span class="keyword">for</span> n=1:armo
+    sf=sf + (an(n)*cos(n*w0*t)+bn(n)*sin(n*w0*t));
+<span class="keyword">end</span>
+
+subplot(3,2,2)
+plot(t1,f(t1),<span class="string">'r'</span>,<span class="string">'LineWidth'</span>,2)
+grid <span class="string">on</span>
+hold <span class="string">on</span>
+t1=0:0.0001:pi;
+plot(t1,sf,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,2)
+
+xlabel(<span class="string">'t'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+nn=1:armo;
+axis <span class="string">auto</span>
+
+
+subplot(3,2,4)
+e=f(t1)-sf;
+plot(t1,e,<span class="string">'LineWidth'</span>,2)
+title(<span class="string">'Error'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+xlabel(<span class="string">'t'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+axis <span class="string">auto</span>
+grid <span class="string">on</span>
+
+subplot(3,2,6)
+e=f(t1)-sf;
+area(t1,e.^2)
+legend(<span class="string">'Energia del error'</span>,<span class="string">'Location'</span>,<span class="string">'Best'</span>)
+xlabel(<span class="string">'t'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+axis <span class="string">auto</span>
+grid <span class="string">on</span>
+
+cn=@(x) 0.504*(2/realsqrt(1+16*x^2));
+
+
+absdn=zeros(1,length(nn));
+cont=1;
+<span class="keyword">for</span> i =0:1:armo
+    <span class="keyword">if</span> i==0
+        absdn(cont)=a0;
+    <span class="keyword">end</span>
+    
+    absdn(cont)=cn(i);
+    cont=cont+1;
+<span class="keyword">end</span>
+mm=0:armo;
+subplot(3,2,3)
+stem(mm,abs(absdn),<span class="string">'LineWidth'</span>,2)
+title(<span class="string">'Espectro de magnitud '</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+xlabel(<span class="string">'\omega'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+grid <span class="string">on</span>
+
+
+subplot(3,2,5) <span class="comment">% % </span>
+stem(nn,arg(nn),<span class="string">'LineWidth'</span>,2)
+title(<span class="string">'Espectro de fase, \angle '</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16) <span class="comment">% % </span>
+xlabel(<span class="string">'\omega'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+grid <span class="string">on</span>
+
+<span class="keyword">end</span>
+
+</pre><p>Para el ejemplo 6.5 y 6.7 utilic&eacute; el mismo c&oacute;digo que viene como referencia, en el 6.5 no sele hizo ninguna modificaci&oacute;n as&iacute; que no amerita ser mencionado aqu&iacute;. En cambio en el 6.7 Se llama del mismo modo pero se quitan del script las gr&aacute;ficas que no se necesitan.</p><pre class="language-matlab">
+<span class="keyword">function</span> p7(t0,tf,dn,d0,f,armo,a,b)
+
+w0=2*pi/(tf-t0);
+
+sf=d0;
+t=a:0.0001:b;
+
+<span class="keyword">for</span> n=1:armo
+    sf=sf+dn(-n)*exp(w0*-n*t*j)+dn(n)*exp(w0*n*t*j);
+<span class="keyword">end</span>
+figure (1)
+hFig = figure(1);
+set(hFig, <span class="string">'Position'</span>, [0 0 900 900])
+subplot(3,2,1)
+plot(t,sf,<span class="string">'LineWidth'</span>,2)
+grid <span class="string">on</span>
+legend(<span class="string">'Serie de Fourier'</span>,<span class="string">'Location'</span>,<span class="string">'Best'</span>)
+xlabel(<span class="string">'t'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+
+sf=d0;
+t1=t0:0.0001:tf;
+
+<span class="keyword">for</span> n=1:armo
+    sf=sf+dn(-n)*exp(w0*-n*t1*j)+dn(n)*exp(w0*n*t1*j);
+<span class="keyword">end</span>
+
+subplot(3,2,2)
+grid <span class="string">on</span>
+hold <span class="string">on</span>
+plot(t1,sf,<span class="string">'LineWidth'</span>,2)
+legend(<span class="string">'Serie de Fourier '</span>,<span class="string">'Location'</span>,<span class="string">'Best'</span>)
+xlabel(<span class="string">'t'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+nn=-armo:armo;
+axis <span class="string">auto</span>
+
+absdn=zeros(1,length(nn));
+cont=1;
+<span class="keyword">for</span> i =-armo:armo
+    <span class="keyword">if</span> i==0
+        absdn(cont)=d0;
+    <span class="keyword">end</span>
+    
+    absdn(cont)=dn(i);
+    cont=cont+1;
+<span class="keyword">end</span>
+
+subplot(3,2,3)
+stem(w0*nn,abs(absdn),<span class="string">'LineWidth'</span>,2)
+title(<span class="string">'Espectro de magnitud D_n '</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+xlabel(<span class="string">'\omega'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+grid <span class="string">on</span>
+
+subplot(3,2,5) <span class="comment">% % </span>
+stem(w0*nn,angle(absdn),<span class="string">'LineWidth'</span>,2) <span class="comment">% % </span>
+title(<span class="string">'Espectro de fase, \angle de D_n '</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16) <span class="comment">% % </span>
+xlabel(<span class="string">'\omega'</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>,<span class="string">'FontSize'</span>,16)
+grid <span class="string">on</span>
+
+<span class="keyword">end</span>
+
+</pre><h2 id="11">Referencia</h2><p>Lathi, B. P. (1998). Signal processing and linear systems (cap. 6). New York: Oxford University Press.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+% 
+% <<portada.png>>
+%% Objetivos
+% 
+% * Realizar gráficas de series de Fourier exponenciales y trigonométricas
+% en tiempo continuo.
+% * Manipulación de instrucciones en MATLAB.
+% * Calculo númerico de los coeficientes de Fourier.
+
+%% Introducción
+% En esta práctica se va a observar el tema de Series de Fourier con el
+% apoyo de matlab para mostrar diferentes graficos que nos proporcionen información
+% útil de la serie.
+% Como introducción vamos a observar la aproximación numerica para encontrar
+% los Dn de la serie exponencial compleja que vemos en
+% la sección 6.6 del libro Lathi.
+% Para calcular numericamente Dn se usa la transformada discreta de
+% Fourier, este metodo utiliza muestras de la señal periodica x(t) eb un
+% período T.
+% 
+% <<aprox.png>>
+% 
+% En este caso nosotros tenemos $$N_0 = T_0/T$ número de muestras en un
+% periodo $$T_0$ y $\Omega_0=\omega_0T= \frac{2\pi}{N_0}$
+%  
+%  Nosotros no podemos hacer que T tienda a cero, pero si podemos tomar una
+%  T muy pequeña, así que por esta cuestion vamos a obviar el limite de T
+%  de la ecuación, siempre recordando que T es diferente de cero.
+% 
+% <<sinLimite.png>>
+% 
+% Por último podemos observar la propiedad de de periocidad, donde
+% encontramos que 
+% 
+% <<periocidad.png>>
+%
+% Esta propiedad significa que cada $$n = \frac{N_0}{2}$ el coeficiente
+% respresenta el valor negativo de n.
+% 
+% <<32.png>>
+% 
+% 
+% 
+% y el ciclo se repite cada $$n = 32$
+% 
+% Como último recordatorio retomamos de la práctica pasada que podemos
+% encontrar otros metodos para aproximar una integral, a continucación se
+% puede observar uno de los métodos previamente vistos.
+% 
+% <<practica4.png>>
+%% Desarrolo
+% En esta sección se van a resolver diferentes problemas que se encuentran
+% en el libro Lathi. Para cada problema lo que se va a hacer es:
+%%
+% # Realizar el programa de la serie que se indica
+% # Gráfica de la serie de Fourier en un intervalo que muestre 5 repeticiones
+% # Gráfica de la señal y la serie de Fourier para 4 armonicos
+% # Gráfica del error
+% # Gráfica de la energía del error
+% # Espectro de magnitud para 4 armonicos
+% # Espectro de fase para 4 armonicos
+% # Todo lo anterior para 15 armonicos
+% 
+%% Ejemplo 6.1
+% Encuentra la serie trigonométrica compacta de la siguiente funcion y su
+% espectro
+% 
+% <<6-1.png>>
+%
+% La función a la que le debemos sacar la serie de fourier es la siguiente
+% 
+% <<f1.png>>
+% 
+% Despues del calculo matemático nosotros podemos observar que contamos con
+% la siguiente serie.
+% 
+% <<serie1.png>>
+% 
+% Podemos observar la exactitud que nos puede dar la serie cuando
+% aumentamos o disminuimos los armonicos. Vamos a observar primero la serie
+% con 4 armonicos y despues con 15 para notar la diferencia.
+% 
+% <<4f1.png>>
+% 
+% En las graficas anterioes se ve poca precisión en la serie de fourier con respecto de la funcion origial.
+% Ahora lo veremos con 15 armónicos para ver que ocurre.
+% 
+% <<15f1.png>>
+% 
+% Como se puede observar, la serie de fourier con más armónicos se parece
+% mas a nuestra función original(en rojo), tiene más precisión.
+%% Ejemplo 6.2
+% Encontrar la serie exponencial y el espectro. Para este ejemplo vamos a
+% suponer que A-3.
+%% Ejemplo 6.5 
+% En este ejemplo vamoa a encontrar la serie exponen ia serie de fourier
+% exponencial de la funciión que previamente vimos en el ejemplo 6.1.
+% Ahora a diferencia del ejemplo 6.1 si vamos a tener valores cuando la t
+% sea negativa.
+% 
+% <<4f5.png>>
+% 
+% En esta grafica se observa que la serie no es tan exacta con apenas 4
+% armonicos, vemos que la gráfica de error tiene una área que para ciertos
+% casos podría ser considerable. Se aprecia una mejor aproximacion a la
+% gráfica origial en nuestra siguientes gráficas donde aumentemos los
+% armónicos.
+% 
+% <<15f5.png>>
+% 
+% Disminuye el erro con más armónicos y así podriamos ir siendo mas exactos
+% si ponemos un número de armonicos lo suficientemente grande.
+%% Ejemplo 6.7
+% Encontrar la serie y el espectro exponencial tomando en cuenta que para
+% este ejemplo la A=3. Para este ejemplo no es necesario colocar la gráfica
+% original, el error ni la energía del error.
+% Para mostrar las gráficas tomé el código de ejemplo de la práctica con
+% ciertas modificaciones para que cumpliera con lo requerido, primero
+% veremos como se ve la serie con cuatro armónicos.
+% 
+% <<4f7.png>>
+% 
+% Vamos a ver algo que a simple vista puede lelgar a ser raro y es que la
+% gráfica de la fase, el espectro de fase esta siempre en cero, esto pasa
+% porque al tener $D_n=1/3$ el numero siempre es un real positivo, eso nos indica 
+% que siempre esta sobre el eje real derecho y nos dice que siempre 
+% tendrá ángulo 0. Como es obvio suponer, se mantendré lo antes mencionado cuando aumentemos
+% en número de armónicos.
+% 
+% <<15f7.png>>
+%% Ejemplo C6.4
+% Elabore un código que implemente el algoritmo de trapecio compuesto para 
+% $n=15$, Utilice este código para aproximar $D_0,...,D_4$ del ejemplo de
+% la práctica. Ahora implemente el código COMPUTER EXAMPLE C6.4 que se encuentra al 
+% final de la sección 6.6 de Lathi, y calcule nuevamente el los coeficientes $D_0,...,D_4$ del 
+% ejemplo propuesto. Muestre una tabla que contenga los coeficientes mencionados calculados 
+% con los dos algoritmos y de forma exacta,
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+%% Apéndice
+% Aquí mostrare mi código de matlab con el cual fui resolviendo los
+% diferentes ejemplos de la práctica.
+% Este código fue para encontrar la serie de Fourier trigonométrica
+% 
+% <include>p1.m</include>
+% 
+% Para el ejemplo 6.5 y 6.7 utilicé el mismo código que viene como
+% referencia, en el 6.5 no sele hizo ninguna modificación así que no
+% amerita ser mencionado aquí. En cambio en el 6.7 Se llama del mismo modo
+% pero se quitan del script las gráficas que no se necesitan.
+% 
+% <include>p7.m</include>
+%% Referencia
+%
+% Lathi, B. P. (1998). Signal processing and linear systems (cap. 6). New York: Oxford University Press.
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+% 
+%
+%
+
+
+##### SOURCE END #####
+--></body></html>
